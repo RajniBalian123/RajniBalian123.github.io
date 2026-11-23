@@ -1,0 +1,340 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover"/>
+<meta name="color-scheme" content="light dark"/>
+<link rel="icon" href="data:,"/>
+<title>Rajni Balian — Applied AI Engineer</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Newsreader:opsz,wght@6..72,600;6..72,700&family=Public+Sans:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+:root{
+  --bg:#ffffff; --surface:#f6f7f8; --surface2:#eef1f1; --ink:#12161c; --muted:#5d6875; --line:#e2e6e9;
+  --accent:#0e6b5e; --accent-ink:#ffffff; --amber:#b45309; --card:#ffffff;
+  --radius:14px;
+}
+@media (prefers-color-scheme: dark){
+  :root{ --bg:#0f1216; --surface:#171b21; --surface2:#1e242c; --ink:#eef0f2; --muted:#9aa5b1; --line:#262d36; --card:#151a20; --accent:#2dd4bf; --accent-ink:#04201c; }
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;background:var(--bg);color:var(--ink);font-family:"Public Sans",system-ui,sans-serif;line-height:1.6;-webkit-font-smoothing:antialiased}
+a{color:inherit}
+.wrap{max-width:1120px;margin:0 auto;padding:0 20px}
+.topbar{position:sticky;top:0;z-index:20;background:color-mix(in srgb, var(--bg) 92%, transparent);backdrop-filter:blur(10px);border-bottom:1px solid var(--line)}
+.topbar-inner{display:flex;align-items:center;justify-content:space-between;gap:16px;padding:14px 0}
+.name{font-weight:700;letter-spacing:-.02em;font-size:18px;text-decoration:none;white-space:nowrap;flex-shrink:0}
+.name span{color:var(--accent)}
+.nav{display:flex;gap:6px;flex-wrap:wrap}
+.nav a{text-decoration:none;font-size:14px;font-weight:600;padding:10px 12px;min-height:40px;display:inline-flex;align-items:center;border-radius:999px;color:var(--muted);white-space:nowrap}
+.topbar .btn{white-space:nowrap;flex-shrink:0}
+@media(max-width:700px){
+  .topbar-inner{flex-wrap:wrap;padding:12px 0 10px}
+  .topbar .btn{display:none}
+  .nav{order:3;width:100%;flex-wrap:nowrap;overflow-x:auto;padding-bottom:2px;scrollbar-width:none}
+  .nav::-webkit-scrollbar{display:none}
+  .nav a{padding:8px 10px;min-height:36px;font-size:13.5px}
+}
+.nav a:hover{background:var(--surface);color:var(--ink)}
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:8px;min-height:44px;padding:11px 18px;border-radius:999px;font-weight:700;font-size:14px;text-decoration:none;border:1px solid transparent;cursor:pointer}
+.btn-primary{background:var(--ink);color:var(--bg)}
+.btn-accent{background:var(--accent);color:var(--accent-ink)}
+.btn-outline{background:transparent;border-color:var(--line);color:var(--ink)}
+.hero{padding:52px 0 36px}
+.hero-grid{display:grid;grid-template-columns:1.15fr .85fr;gap:28px;align-items:start}
+@media(max-width:860px){.hero-grid{grid-template-columns:1fr}}
+.eyebrow{font-family:"IBM Plex Mono",monospace;font-size:12px;letter-spacing:.14em;text-transform:uppercase;color:var(--accent);font-weight:600}
+h1{font-family:"Newsreader",serif;font-size:clamp(42px,6vw,68px);line-height:.95;letter-spacing:-.03em;margin:14px 0 18px;font-weight:700}
+h1 em{font-style:normal;color:var(--accent)}
+.lede{font-size:18px;line-height:1.65;color:var(--muted);max-width:620px}
+.lede strong{color:var(--ink)}
+.hero-actions{display:flex;flex-wrap:wrap;gap:10px;margin-top:24px}
+.meta-row{display:flex;flex-wrap:wrap;gap:8px;margin-top:22px}
+.pill{font-size:13px;font-weight:600;padding:7px 11px;border:1px solid var(--line);border-radius:999px;background:var(--surface)}
+.stats{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin-top:28px}
+.stat{background:var(--surface);border:1px solid var(--line);border-radius:12px;padding:16px}
+.stat b{font-size:26px;line-height:1;display:block;letter-spacing:-.03em}
+.stat span{font-size:13px;color:var(--muted);line-height:1.4;display:block;margin-top:6px}
+.profile-card{background:var(--ink);color:var(--bg);border-radius:16px;padding:22px;overflow:hidden}
+.profile-card .mono{font-family:"IBM Plex Mono",monospace;font-size:12px;opacity:.75;letter-spacing:.08em;text-transform:uppercase}
+.profile-card h3{margin:10px 0 6px;font-size:22px;line-height:1.2;letter-spacing:-.02em}
+.profile-card p{opacity:.85;font-size:14.5px;line-height:1.6}
+.code{background:#0b0f14;color:#d6e2ea;border-radius:10px;padding:16px;font-family:"IBM Plex Mono",monospace;font-size:12.5px;line-height:1.7;overflow:auto;white-space:pre-wrap;word-break:break-word}
+.code .k{color:#7dd3c8}.code .s{color:#fbbf24}
+.gh-line{display:flex;justify-content:space-between;gap:12px;padding:12px 0;border-top:1px solid rgba(255,255,255,.14);font-size:14px}
+.gh-line a{font-weight:700;text-decoration:underline;text-underline-offset:3px}
+section{padding:36px 0}
+.sec-head{display:flex;justify-content:space-between;align-items:end;gap:20px;margin-bottom:18px;flex-wrap:wrap}
+.sec-head h2{font-family:"Newsreader",serif;font-size:36px;line-height:1;letter-spacing:-.02em;margin:6px 0 0}
+.sec-head p{color:var(--muted);max-width:560px;margin:0;font-size:15px}
+.filters{display:flex;gap:8px;flex-wrap:wrap;margin-bottom:16px}
+.filter{ min-height:40px;padding:9px 14px;border-radius:999px;border:1px solid var(--line);background:var(--card);font-weight:700;font-size:13px;cursor:pointer}
+.filter.active{background:var(--ink);color:var(--bg);border-color:var(--ink)}
+.grid{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}
+@media(max-width:960px){.grid{grid-template-columns:repeat(2,1fr)}}
+@media(max-width:620px){.grid{grid-template-columns:1fr}.stats{grid-template-columns:1fr 1fr}}
+.card{background:var(--card);border:1px solid var(--line);border-radius:var(--radius);padding:20px;display:flex;flex-direction:column}
+.card-top{display:flex;justify-content:space-between;align-items:center}
+.tag{font-family:"IBM Plex Mono",monospace;font-size:11px;letter-spacing:.1em;text-transform:uppercase;font-weight:600;padding:5px 8px;border-radius:999px;background:var(--surface2)}
+.tag.rag{background:#e6f4f1;color:#0e6b5e}.tag.agent{background:#fef3c7;color:#92400e}.tag.data{background:#e0e7ff;color:#3730a3}
+@media(prefers-color-scheme:dark){.tag.rag{background:#12312c;color:#5eead4}.tag.agent{background:#2e2100;color:#fcd34d}.tag.data{background:#1e2340;color:#a5b4fc}}
+.card h3{font-size:18px;line-height:1.25;letter-spacing:-.02em;margin:14px 0 8px}
+.card p{font-size:14.5px;color:var(--muted);line-height:1.6;margin:0}
+.card ul{margin:12px 0 0;padding-left:18px;font-size:13.5px;color:var(--muted);line-height:1.6}
+.card-foot{margin-top:auto;padding-top:18px;display:flex;justify-content:space-between;align-items:center;gap:10px}
+.repo{font-family:"IBM Plex Mono",monospace;font-size:12px;color:var(--muted);word-break:break-all}
+.card a.gh{font-size:13px;font-weight:700;text-decoration:none;white-space:nowrap}
+.card a.gh:after{content:" ↗"}
+.feature{display:grid;grid-template-columns:1fr 1fr;gap:18px}
+@media(max-width:860px){.feature{grid-template-columns:1fr}}
+.panel{border:1px solid var(--line);border-radius:16px;padding:22px;background:var(--surface)}
+.panel h3{margin:0 0 8px;font-size:20px;letter-spacing:-.02em}
+.panel p{color:var(--muted);font-size:15px}
+.flow{display:flex;flex-direction:column;gap:8px;margin-top:16px}
+.flow div{background:var(--card);border:1px solid var(--line);border-radius:10px;padding:12px 14px;font-size:14px;display:flex;justify-content:space-between;gap:12px}
+.flow div span{color:var(--muted);font-size:13px;text-align:right}
+.principles{display:grid;grid-template-columns:repeat(4,1fr);gap:14px}
+@media(max-width:900px){.principles{grid-template-columns:repeat(2,1fr)}}
+@media(max-width:520px){.principles{grid-template-columns:1fr}}
+.principle{padding:18px;border-top:3px solid var(--ink);background:var(--surface);border-radius:0 0 12px 12px}
+.principle b{font-size:15px}
+.principle p{font-size:14px;color:var(--muted);margin:8px 0 0;line-height:1.6}
+table{width:100%;border-collapse:collapse;font-size:14px;background:var(--card);border:1px solid var(--line);border-radius:12px;overflow:hidden}
+th,td{padding:12px 14px;text-align:left;border-bottom:1px solid var(--line);vertical-align:top}
+th{font-size:12px;letter-spacing:.08em;text-transform:uppercase;color:var(--muted);background:var(--surface)}
+tr:last-child td{border-bottom:none}
+.skills{display:grid;grid-template-columns:repeat(5,1fr);gap:12px}
+@media(max-width:960px){.skills{grid-template-columns:repeat(2,1fr)}}
+@media(max-width:520px){.skills{grid-template-columns:1fr}}
+.skill{border:1px solid var(--line);border-radius:12px;padding:16px}
+.skill h4{margin:0 0 10px;font-size:13px;letter-spacing:.08em;text-transform:uppercase}
+.chips{display:flex;flex-wrap:wrap;gap:6px}
+.chip{font-size:12.5px;font-weight:600;padding:6px 8px;background:var(--surface);border-radius:999px;border:1px solid var(--line)}
+.readme-wrap{display:grid;grid-template-columns:.9fr 1.1fr;gap:18px;align-items:start}
+@media(max-width:860px){.readme-wrap{grid-template-columns:1fr}}
+.checklist{list-style:none;padding:0;margin:0;display:flex;flex-direction:column;gap:10px}
+.checklist li{display:flex;gap:12px;background:var(--surface);border:1px solid var(--line);border-radius:10px;padding:13px 14px;font-size:14px;line-height:1.5}
+.checklist li b{min-width:22px;height:22px;border-radius:50%;background:var(--ink);color:var(--bg);display:grid;place-items:center;font-size:12px;flex-shrink:0;margin-top:1px}
+.timeline{display:flex;flex-direction:column}
+.tl{display:grid;grid-template-columns:150px 1fr;gap:16px;padding:16px 0;border-top:1px solid var(--line)}
+@media(max-width:620px){.tl{grid-template-columns:1fr}}
+.tl time{font-family:"IBM Plex Mono",monospace;font-size:12px;color:var(--muted);padding-top:3px}
+.tl h4{margin:0;font-size:16px}.tl p{margin:4px 0 0;color:var(--muted);font-size:14.5px}
+.contact{background:var(--ink);color:var(--bg);border-radius:18px;padding:28px;display:grid;grid-template-columns:1.2fr .8fr;gap:24px}
+@media(max-width:760px){.contact{grid-template-columns:1fr}}
+.contact h2{font-family:"Newsreader",serif;font-size:36px;margin:0 0 10px;line-height:1}
+.contact p{opacity:.82}
+.contact a{color:inherit}
+.contact-box{background:rgba(255,255,255,.08);border:1px solid rgba(255,255,255,.14);border-radius:12px;padding:16px}
+.contact-box div{padding:10px 0;border-bottom:1px solid rgba(255,255,255,.12);font-size:14px;display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap}
+.contact-box div:last-child{border:none}
+.toast{position:fixed;left:50%;bottom:20px;transform:translateX(-50%) translateY(20px);background:var(--ink);color:var(--bg);padding:11px 16px;border-radius:999px;font-size:13px;font-weight:700;opacity:0;pointer-events:none;transition:.25s;z-index:50}
+.toast.show{opacity:1;transform:translateX(-50%) translateY(0)}
+footer{padding:22px 0 36px;color:var(--muted);font-size:13px;display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap}
+button,[role="button"]{min-height:36px}
+</style>
+</head>
+<body>
+<header class="topbar"><div class="wrap topbar-inner">
+<a class="name" href="#top">Rajni Balian <span>· AI</span></a>
+<nav class="nav" aria-label="Main">
+<a href="#work">Work</a><a href="#approach">Approach</a><a href="#stack">Stack</a><a href="#github">GitHub setup</a><a href="#contact">Contact</a>
+</nav>
+<a class="btn btn-primary" href="https://github.com/RajniBalian123" target="_blank" rel="noopener" style="min-height:40px;padding:9px 14px">GitHub ↗</a>
+</div></header>
+
+<main id="top" class="wrap">
+<!-- HERO -->
+<div class="hero"><div class="hero-grid">
+<div>
+<div class="eyebrow">Toronto · Applied AI Engineer · Azure OpenAI / RAG / Agents</div>
+<h1>I build AI systems that <em>pass evals</em>, not just demos.</h1>
+<p class="lede">I'm <strong>Rajni Balian</strong> — 17 years in engineering, 8 in data & AI platforms, 4 shipping GenAI in production. My work is enterprise RAG, agentic workflows, and Lakehouse pipelines where <strong>groundedness, provenance, and cost</strong> are measured on every run.</p>
+<div class="hero-actions">
+<a class="btn btn-accent" href="#work">See the project blueprints</a>
+<a class="btn btn-outline" href="mailto:rajni.balian1@gmail.com">rajni.balian1@gmail.com</a>
+<button class="btn btn-outline" onclick="copyText('rajni.balian1@gmail.com','Email copied')">Copy email</button>
+</div>
+<div class="meta-row"><span class="pill">📍 Toronto — Hybrid / Remote Canada</span><span class="pill">Open to: AI Engineer · Forward Deployed · Solutions Architect, AI</span></div>
+<div class="stats">
+<div class="stat"><b>17 yrs</b><span>Engineering across enterprise platforms</span></div>
+<div class="stat"><b>RAG + Agents</b><span>Azure OpenAI, AI Search, LangGraph, MCP</span></div>
+<div class="stat"><b>Eval-first</b><span>Golden sets, groundedness gates, LLM-as-judge</span></div>
+</div>
+</div>
+
+<aside class="profile-card" aria-label="GitHub profile card">
+<div class="mono">github.com / RajniBalian123</div>
+<h3>Profile README — ready to publish</h3>
+<p>Headline, stack, and 6 planned pinned projects. No client code, no client names — each blueprint below is to be built from scratch with public / synthetic data, then pinned.</p>
+<div class="code"><span class="k">##</span> Hi, I'm Rajni Balian
+Applied AI Engineer — Azure OpenAI, RAG,
+Agents &amp; Lakehouse
+
+<span class="k">**Building:**</span> eval harnesses, semantic cache,
+quarantine pipelines, multi-agent workflows
+
+<span class="k">**Stack:**</span> <span class="s">Python · Azure · Databricks
+LangGraph · Delta Lake · PySpark</span></div>
+<div class="gh-line"><span>Username</span><a href="https://github.com/RajniBalian123" target="_blank" rel="noopener">RajniBalian123</a></div>
+<div class="gh-line"><span>Email</span><a href="mailto:rajni.balian1@gmail.com">rajni.balian1@gmail.com</a></div>
+<div class="gh-line"><span>Website</span><span style="font-weight:700">This page → link it in your GitHub bio</span></div>
+<div style="margin-top:16px;display:flex;gap:8px;flex-wrap:wrap"><a class="btn" href="#github" style="background:white;color:black">Copy full README ↓</a><a class="btn btn-outline" href="https://github.com/RajniBalian123" target="_blank" rel="noopener" style="color:white;border-color:rgba(255,255,255,.3)">View GitHub ↗</a></div>
+</aside>
+</div></div>
+
+<!-- WORK -->
+<section id="work">
+<div class="sec-head"><div><div class="eyebrow">Selected work — personal repo blueprints</div><h2>Six projects to build & pin, each one proves a skill.</h2></div><p>Ordered the way strong senior profiles pin them: capstone RAG first, then agents, data, and the small sharp utilities. These are build-ready outlines — create each repo from the GitHub setup below, then pin it. Every README follows the same 30-second format — what it does, architecture, eval table.</p></div>
+<div class="filters" role="tablist">
+<button class="filter active" onclick="filterProjects('all',this)">All projects</button>
+<button class="filter" onclick="filterProjects('rag',this)">RAG & Evals</button>
+<button class="filter" onclick="filterProjects('agent',this)">Agents</button>
+<button class="filter" onclick="filterProjects('data',this)">Data Engineering</button>
+<button class="filter" onclick="filterProjects('mlops',this)">MLOps</button>
+</div>
+<div class="grid" id="projectGrid">
+<article class="card" data-cat="rag mlops"><div class="card-top"><span class="tag rag">RAG · Evals</span><span style="font-size:12px;color:var(--muted)">01 — Blueprint · Capstone</span></div><h3>RAG Evaluation Harness</h3><p>Golden question set, groundedness & citation checks, and LLM-as-judge scoring for any RAG pipeline. The project interviewers remember.</p><ul><li>Hybrid retrieval eval — recall@k, faithfulness, answer relevance</li><li>Abstain test: does it say “I don’t know” when it should?</li><li>CI gate — fails the build if groundedness drops</li></ul><div class="card-foot"><span class="repo">RajniBalian123/rag-eval-harness</span><a class="gh" href="#github">Blueprint</a></div></article>
+
+<article class="card" data-cat="rag mlops"><div class="card-top"><span class="tag rag">RAG · Cost</span><span style="font-size:12px;color:var(--muted)">02 — Blueprint · Utility</span></div><h3>Semantic Cache for LLM Calls</h3><p>Embedding-based cache with a 0.92 similarity gate — repeat questions skip the LLM entirely. Ships with a cost dashboard: cached vs. uncached spend.</p><ul><li>Azure OpenAI embeddings + vector store</li><li>Cache hit rate, latency saved, $ saved per 1k queries</li><li>TTL + invalidation when source docs change</li></ul><div class="card-foot"><span class="repo">RajniBalian123/semantic-cache-llm</span><a class="gh" href="#github">Blueprint</a></div></article>
+
+<article class="card" data-cat="data"><div class="card-top"><span class="tag data">Data · Lakehouse</span><span style="font-size:12px;color:var(--muted)">03 — Blueprint · Data</span></div><h3>Quarantine-Pattern Pipeline</h3><p>Databricks / Delta Lake pipeline that never lets one bad row kill the batch — or silently disappear. Bad rows are flagged, reason-tagged, and reconciled.</p><ul><li><code>is_quarantined</code> + <code>failed_rules[]</code> on every row</li><li>Invariant check: clean + quarantined = input</li><li>Corrections flow re-ingests fixed rows</li></ul><div class="card-foot"><span class="repo">RajniBalian123/quarantine-pipeline</span><a class="gh" href="#github">Blueprint</a></div></article>
+
+<article class="card" data-cat="agent"><div class="card-top"><span class="tag agent">Agents</span><span style="font-size:12px;color:var(--muted)">04 — Blueprint · Agents</span></div><h3>Multi-Agent Critic Workflow</h3><p>LangGraph agent with a draft → critique → rewrite loop, tool use, and human-in-the-loop approval. Evaluated, not just prompted.</p><ul><li>State graph, retry & escalation paths</li><li>Per-step traces + evals on final output</li><li>Guardrails: allow-listed tools only</li></ul><div class="card-foot"><span class="repo">RajniBalian123/langgraph-critic-agent</span><a class="gh" href="#github">Blueprint</a></div></article>
+
+<article class="card" data-cat="data agent"><div class="card-top"><span class="tag data">Platform · Trust</span><span style="font-size:12px;color:var(--muted)">05 — Blueprint · Showcase</span></div><h3>Cross-BU Metrics Aggregator</h3><p>Trustworthy reporting across three mock business units — every number carries provenance, access control, and a trust score. My leadership-reporting pattern, rebuilt as my own code.</p><ul><li>Metrics from Engineering / Finance / Client Services (synthetic)</li><li>Lineage on every KPI — source, owner, freshness</li><li>Quarantine rate per BU as a trust signal</li></ul><div class="card-foot"><span class="repo">RajniBalian123/bu-metrics-aggregator</span><a class="gh" href="#github">Blueprint</a></div></article>
+
+<article class="card" data-cat="mlops"><div class="card-top"><span class="tag">MLOps</span><span style="font-size:12px;color:var(--muted)">06 — Blueprint · MLOps</span></div><h3>Prompt Versioning & Canary Evals</h3><p>Versioned prompt templates with eval-gated rollout. New prompt runs as a canary against the golden set — promote or roll back in one click.</p><ul><li>Prompt registry with diff & history</li><li>Canary % traffic + auto-rollback on regression</li><li>Token / latency / cost per version</li></ul><div class="card-foot"><span class="repo">RajniBalian123/prompt-canary</span><a class="gh" href="#github">Blueprint</a></div></article>
+</div>
+<p style="font-size:13px;color:var(--muted);margin-top:14px">All six are personal project blueprints to be built with public documents and synthetic data — patterns from production work, code to be written from scratch for GitHub. Set up the profile first (setup below), then build and pin them in this order.</p>
+</section>
+
+<!-- FEATURED DEEP DIVE -->
+<section>
+<div class="sec-head"><div><div class="eyebrow">Deep dive — featured project</div><h2>How the metrics aggregator earns trust</h2></div><p>LinkedIn lists jobs. This site shows thinking. This is the write-up format used for every project: problem → approach → what proves it works.</p></div>
+<div class="feature">
+<div class="panel"><h3>The problem</h3><p>Leadership asks one question — “how are we doing?” — and gets three different numbers from three business units, none with a source attached. The fix isn’t a prettier dashboard. It’s provenance.</p><h3 style="margin-top:20px">The approach</h3><p>Each BU publishes metrics through the same contract. An aggregation layer joins them, attaches lineage, enforces who can see what, and scores trust from freshness + quarantine rate + owner sign-off. If trust is low, the number is shown — with the reason it’s low, right next to it.</p><div style="display:flex;gap:8px;flex-wrap:wrap;margin-top:16px"><span class="pill">Python APIs</span><span class="pill">Delta Lake</span><span class="pill">Access control</span><span class="pill">Provenance graph</span></div></div>
+<div class="panel"><h3>Request flow</h3><div class="flow"><div><b>1 · Ingest</b><span>BU metrics + schema check</span></div><div><b>2 · Quarantine</b><span>Bad rows flagged, not dropped</span></div><div><b>3 · Aggregate</b><span>Join + lineage attached</span></div><div><b>4 · Score trust</b><span>Freshness · completeness · owner</span></div><div><b>5 · Serve</b><span>API + dashboard, RBAC enforced</span></div></div><p style="margin-top:14px;font-size:13.5px"><strong style="color:var(--ink)">Result pattern to publish in the README:</strong> eval table with reconciliation check (in = clean + quarantined), trust score per BU, and a screenshot of the dashboard with one low-trust metric explained.</p></div>
+</div>
+</section>
+
+<!-- APPROACH -->
+<section id="approach">
+<div class="sec-head"><div><div class="eyebrow">How I work</div><h2>Four rules I ship by</h2></div><p>This section is what LinkedIn can’t show — and what hiring managers actually probe in interviews.</p></div>
+<div class="principles">
+<div class="principle"><b>1. Evals first</b><p>No feature ships without a golden set. I build the test before the prompt, so “it feels better” becomes a number.</p></div>
+<div class="principle"><b>2. Groundedness gates</b><p>Every answer must cite its source or abstain. Ungrounded answers don’t reach the user — they go to a review queue.</p></div>
+<div class="principle"><b>3. Abstain & escalate</b><p>Low confidence isn’t a failure mode to hide. It’s a routing decision: cached answer, cheaper model, or a human.</p></div>
+<div class="principle"><b>4. Cost is a feature</b><p>Tokens, compute, and latency are tagged per plant / per BU / per user from day one — not retrofitted after the bill arrives.</p></div>
+</div>
+<div style="margin-top:18px;overflow-x:auto;border-radius:12px">
+<table><thead><tr><th>Request type</th><th>Route</th><th>Why</th></tr></thead><tbody>
+<tr><td><strong>Repeat / near-duplicate question</strong></td><td>Semantic cache (≥0.92)</td><td>Skip the LLM call entirely — fastest and cheapest</td></tr>
+<tr><td><strong>Simple lookup with a clear source</strong></td><td>Small / cheap model + retrieval</td><td>Doesn’t need frontier reasoning</td></tr>
+<tr><td><strong>Multi-step, ambiguous, high-stakes</strong></td><td>Frontier model + agent + human review</td><td>Spend where the risk is</td></tr>
+<tr><td><strong>No grounded source found</strong></td><td>Abstain → escalate</td><td>A wrong confident answer costs more than “I don’t know”</td></tr>
+</tbody></table></div>
+</section>
+
+<!-- STACK -->
+<section id="stack">
+<div class="sec-head"><div><div class="eyebrow">Skills</div><h2>Stack, grouped the way teams hire</h2></div></div>
+<div class="skills">
+<div class="skill"><h4>LLMs & RAG</h4><div class="chips"><span class="chip">Azure OpenAI</span><span class="chip">Azure AI Search</span><span class="chip">Hybrid retrieval</span><span class="chip">Embeddings</span><span class="chip">Chunking</span><span class="chip">Reranking</span></div></div>
+<div class="skill"><h4>Agents</h4><div class="chips"><span class="chip">LangGraph</span><span class="chip">LangChain</span><span class="chip">MCP</span><span class="chip">Tool use</span><span class="chip">Human-in-loop</span><span class="chip">Guardrails</span></div></div>
+<div class="skill"><h4>Data Engineering</h4><div class="chips"><span class="chip">Databricks</span><span class="chip">Delta Lake</span><span class="chip">PySpark</span><span class="chip">Spark SQL</span><span class="chip">Synapse</span><span class="chip">Streaming</span></div></div>
+<div class="skill"><h4>MLOps & Evals</h4><div class="chips"><span class="chip">LLM-as-judge</span><span class="chip">Golden sets</span><span class="chip">MLflow</span><span class="chip">Prompt versioning</span><span class="chip">Cost tracking</span></div></div>
+<div class="skill"><h4>Cloud & Platform</h4><div class="chips"><span class="chip">Azure</span><span class="chip">AWS — S3 / EC2 / Lambda</span><span class="chip">SageMaker</span><span class="chip">Bedrock eval</span><span class="chip">Python APIs</span><span class="chip">CI / Testing</span></div></div>
+</div>
+</section>
+
+<!-- GITHUB SETUP -->
+<section id="github">
+<div class="sec-head"><div><div class="eyebrow">GitHub — ready to go live</div><h2>Your account is RajniBalian123 — paste the README, pin the six.</h2></div><p>About 10 minutes end to end. Your existing account and email are already filled in below.</p></div>
+<div class="readme-wrap">
+<div>
+<ol class="checklist">
+<li><b>1</b><span><strong>Sign in</strong> at github.com as <strong>RajniBalian123</strong> with <strong>rajni.balian1@gmail.com</strong> — your existing account.</span></li>
+<li><b>2</b><span><strong>Create a repo named exactly</strong> <code>RajniBalian123</code> (same as username) and add a README.md — GitHub turns it into your profile.</span></li>
+<li><b>3</b><span><strong>Paste the README</strong> on the right (copy button) and set your bio to: <em>Applied AI Engineer · Azure OpenAI / RAG / Agents · Toronto</em> + link this website.</span></li>
+<li><b>4</b><span><strong>Create the 6 project repos</strong> using the names in the Work section, each with the README format: demo, architecture diagram, eval table.</span></li>
+<li><b>5</b><span><strong>Pin all 6</strong> on your profile in the order shown — capstone RAG first.</span></li>
+</ol>
+<div style="margin-top:14px;display:flex;gap:8px;flex-wrap:wrap"><a class="btn btn-primary" href="https://github.com/RajniBalian123" target="_blank" rel="noopener">View GitHub profile ↗</a><button class="btn btn-outline" onclick="copyReadme()">Copy profile README</button></div>
+<p id="copyStatus" style="font-size:13px;color:var(--muted);margin-top:10px"></p>
+</div>
+<div class="code" id="readmeCode"># Hi, I'm Rajni Balian 👋
+
+**Applied AI Engineer** — I build production RAG &amp; agent systems
+on Azure OpenAI that pass evals, cite their sources, and track cost.
+
+📍 Toronto · ✉️ rajni.balian1@gmail.com
+
+## What I build
+- **Enterprise RAG** — hybrid retrieval, groundedness gates, abstain-and-escalate
+- **Agents** — LangGraph workflows, tool use, human-in-the-loop, MCP
+- **Lakehouse pipelines** — Databricks / Delta Lake, quarantine pattern, data quality
+
+## Tech stack
+`Python` `Azure OpenAI` `Azure AI Search` `LangGraph` `LangChain`
+`Databricks` `Delta Lake` `PySpark` `AWS (S3 · Lambda · SageMaker)`
+
+## Pinned projects
+1. **rag-eval-harness** — golden sets, groundedness &amp; citation evals
+2. **semantic-cache-llm** — 0.92-gate semantic cache + cost dashboard
+3. **quarantine-pipeline** — bad rows flagged &amp; reconciled, never dropped
+4. **langgraph-critic-agent** — draft → critique → rewrite agent
+5. **bu-metrics-aggregator** — cross-BU metrics with provenance &amp; trust scores
+6. **prompt-canary** — prompt versioning with eval-gated rollout
+
+*All projects are my own code, to be built with public / synthetic data.*</div>
+</div>
+</section>
+
+<!-- BACKGROUND -->
+<section>
+<div class="sec-head"><div><div class="eyebrow">Background</div><h2>Experience snapshot</h2></div><p>Full history is on LinkedIn and my resume. This is the short version recruiters ask for.</p></div>
+<div class="timeline">
+<div class="tl"><time>2026 — Present</time><div><h4>Applied AI Engineer — Enterprise AI & Azure Solutions</h4><p>Enterprise Knowledge Assistant: Azure OpenAI RAG platform — ingestion & indexing pipelines, hybrid search, guardrails, automated eval testing, Python APIs.</p></div></div>
+<div class="tl"><time>2023 — 2026</time><div><h4>Data & AI Architecture — Lakehouse Platforms</h4><p>Azure Databricks Lakehouse (Spark SQL / PySpark), EDW & Synapse, fraud & analytics pipelines, multi-cloud estate — on-prem to Azure with AWS (S3, SageMaker) in the mix; Bedrock vs. Azure OpenAI evaluation.</p></div></div>
+<div class="tl"><time>Earlier</time><div><h4>Engineering — 17 years total</h4><p>Concordia Master’s (2016). Toronto & Montreal, Canada; Bangalore, India. Full resume available on request.</p></div></div>
+</div>
+</section>
+
+<!-- CONTACT -->
+<section id="contact"><div class="contact">
+<div><div class="eyebrow" style="color:#5eead4">Contact</div><h2>Let’s talk about your AI platform.</h2><p>I’m interviewing for AI Engineer, Forward Deployed Engineer, and AI Solutions Architect roles — Toronto hybrid, remote Canada, and relocation opportunities. The fastest way to reach me is email.</p><div style="display:flex;gap:8px;flex-wrap:wrap;margin-top:18px"><a class="btn" href="mailto:rajni.balian1@gmail.com" style="background:white;color:black">Email me</a><a class="btn btn-outline" href="https://github.com/RajniBalian123" target="_blank" rel="noopener" style="color:white;border-color:rgba(255,255,255,.35)">GitHub — RajniBalian123 ↗</a></div></div>
+<div class="contact-box">
+<div><span>Email</span><a href="mailto:rajni.balian1@gmail.com"><strong>rajni.balian1@gmail.com</strong></a></div>
+<div><span>GitHub</span><a href="https://github.com/RajniBalian123" target="_blank" rel="noopener"><strong>github.com/RajniBalian123</strong></a></div>
+<div><span>Location</span><strong>Toronto, ON</strong></div>
+<div><span>Focus</span><strong>RAG · Agents · Lakehouse</strong></div>
+<div><span>Resume</span><span>Email me — I’ll send the latest PDF</span></div>
+</div>
+</div></section>
+
+<footer><span>© 2026 Rajni Balian — Personal projects only; no client code or data on GitHub.</span><span>Toronto · Applied AI Engineer — RAG, Agents & Lakehouse</span></footer>
+</main>
+<div class="toast" id="toast">Copied</div>
+<script>
+function showToast(msg){var t=document.getElementById('toast');t.textContent=msg;t.classList.add('show');setTimeout(function(){t.classList.remove('show')},2200)}
+function copyText(txt,msg){
+  if(navigator.clipboard&&navigator.clipboard.writeText){navigator.clipboard.writeText(txt).then(function(){showToast(msg||'Copied')}).catch(function(){fallbackCopy(txt,msg)})}else{fallbackCopy(txt,msg)}
+}
+function fallbackCopy(txt,msg){var ta=document.createElement('textarea');ta.value=txt;document.body.appendChild(ta);ta.select();try{document.execCommand('copy');showToast(msg||'Copied')}catch(e){}document.body.removeChild(ta)}
+function copyReadme(){
+  var el=document.getElementById('readmeCode');var txt=el.innerText||el.textContent;
+  copyText(txt,'Profile README copied — paste into GitHub');
+  document.getElementById('copyStatus').textContent='Copied. In GitHub: your RajniBalian123 repo → README.md → paste → Commit.';
+}
+function filterProjects(cat,btn){
+  document.querySelectorAll('.filter').forEach(function(b){b.classList.remove('active')});btn.classList.add('active');
+  document.querySelectorAll('#projectGrid .card').forEach(function(c){
+    var cats=(c.getAttribute('data-cat')||'').split(' ');
+    c.style.display=(cat==='all'||cats.indexOf(cat)>-1)?'':'none';
+  });
+}
+</script>
+</body>
+</html>
