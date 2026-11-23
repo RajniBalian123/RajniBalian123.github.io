@@ -139,7 +139,7 @@ button,[role="button"]{min-height:36px}
 <header class="topbar"><div class="wrap topbar-inner">
 <a class="name" href="#top">Rajni Balian <span>· AI</span></a>
 <nav class="nav" aria-label="Main">
-<a href="#work">Work</a><a href="#approach">Approach</a><a href="#stack">Stack</a><a href="#github">GitHub setup</a><a href="#contact">Contact</a>
+<a href="#work">Work</a><a href="#approach">Approach</a><a href="#stack">Stack</a><a href="#github">GitHub</a><a href="#contact">Contact</a>
 </nav>
 <a class="btn btn-primary" href="https://github.com/RajniBalian123" target="_blank" rel="noopener" style="min-height:40px;padding:9px 14px">GitHub ↗</a>
 </div></header>
@@ -152,7 +152,7 @@ button,[role="button"]{min-height:36px}
 <h1>I build AI systems that <em>pass evals</em>, not just demos.</h1>
 <p class="lede">I'm <strong>Rajni Balian</strong> — 17 years in engineering, 8 in data & AI platforms, 4 shipping GenAI in production. My work is enterprise RAG, agentic workflows, and Lakehouse pipelines where <strong>groundedness, provenance, and cost</strong> are measured on every run.</p>
 <div class="hero-actions">
-<a class="btn btn-accent" href="#work">See the project blueprints</a>
+<a class="btn btn-accent" href="#work">See the projects</a>
 <a class="btn btn-outline" href="mailto:rajni.balian1@gmail.com">rajni.balian1@gmail.com</a>
 <button class="btn btn-outline" onclick="copyText('rajni.balian1@gmail.com','Email copied')">Copy email</button>
 </div>
@@ -167,13 +167,13 @@ button,[role="button"]{min-height:36px}
 <aside class="profile-card" aria-label="GitHub profile card">
 <div class="mono">github.com / RajniBalian123</div>
 <h3>Profile README — ready to publish</h3>
-<p>Headline, stack, and 6 planned pinned projects. No client code, no client names — each blueprint below is to be built from scratch with public / synthetic data, then pinned.</p>
+<p>Headline, stack, and 15 live projects. No client code, no client names — each one below is my own code, built from scratch with synthetic data.</p>
 <div class="code"><span class="k">##</span> Hi, I'm Rajni Balian
 Applied AI Engineer — Azure OpenAI, RAG,
 Agents &amp; Lakehouse
 
-<span class="k">**Building:**</span> eval harnesses, semantic cache,
-quarantine pipelines, multi-agent workflows
+<span class="k">**Building:**</span> enterprise RAG, agent skills,
+durable workflows, cost tracking
 
 <span class="k">**Stack:**</span> <span class="s">Python · Azure · Databricks
 LangGraph · Delta Lake · PySpark</span></div>
@@ -186,7 +186,7 @@ LangGraph · Delta Lake · PySpark</span></div>
 
 <!-- WORK -->
 <section id="work">
-<div class="sec-head"><div><div class="eyebrow">Selected work — personal repo blueprints</div><h2>Six projects to build & pin, each one proves a skill.</h2></div><p>Ordered the way strong senior profiles pin them: capstone RAG first, then agents, data, and the small sharp utilities. These are build-ready outlines — create each repo from the GitHub setup below, then pin it. Every README follows the same 30-second format — what it does, architecture, eval table.</p></div>
+<div class="sec-head"><div><div class="eyebrow">Selected work — live on GitHub</div><h2>Fifteen projects, each one proves a skill.</h2></div><p>Ordered the way strong senior profiles pin them: capstone RAG first, then agents, data, and the small sharp utilities. Every repo is built, tested, and live — each README follows the same 30-second format: what it does, architecture, and what proves it works.</p></div>
 <div class="filters" role="tablist">
 <button class="filter active" onclick="filterProjects('all',this)">All projects</button>
 <button class="filter" onclick="filterProjects('rag',this)">RAG & Evals</button>
@@ -195,19 +195,37 @@ LangGraph · Delta Lake · PySpark</span></div>
 <button class="filter" onclick="filterProjects('mlops',this)">MLOps</button>
 </div>
 <div class="grid" id="projectGrid">
-<article class="card" data-cat="rag mlops"><div class="card-top"><span class="tag rag">RAG · Evals</span><span style="font-size:12px;color:var(--muted)">01 — Blueprint · Capstone</span></div><h3>RAG Evaluation Harness</h3><p>Golden question set, groundedness & citation checks, and LLM-as-judge scoring for any RAG pipeline. The project interviewers remember.</p><ul><li>Hybrid retrieval eval — recall@k, faithfulness, answer relevance</li><li>Abstain test: does it say “I don’t know” when it should?</li><li>CI gate — fails the build if groundedness drops</li></ul><div class="card-foot"><span class="repo">RajniBalian123/rag-eval-harness</span><a class="gh" href="#github">Blueprint</a></div></article>
+<article class="card" data-cat="rag mlops"><div class="card-top"><span class="tag rag">RAG · Evals</span><span style="font-size:12px;color:var(--muted)">01 — Live · Capstone</span></div><h3>KYC Compliance RAG</h3><p>RAG over KYC documents: grounded answers with citations — and it abstains when the documents don’t cover the question.</p><ul><li>Hybrid retrieval + citation checks</li><li>Abstain-and-escalate on ungrounded questions</li><li>Eval table in the README</li></ul><div class="card-foot"><span class="repo">RajniBalian123/kyc-compliance-rag</span><a class="gh" href="https://github.com/RajniBalian123/kyc-compliance-rag" target="_blank" rel="noopener">View repo</a></div></article>
 
-<article class="card" data-cat="rag mlops"><div class="card-top"><span class="tag rag">RAG · Cost</span><span style="font-size:12px;color:var(--muted)">02 — Blueprint · Utility</span></div><h3>Semantic Cache for LLM Calls</h3><p>Embedding-based cache with a 0.92 similarity gate — repeat questions skip the LLM entirely. Ships with a cost dashboard: cached vs. uncached spend.</p><ul><li>Azure OpenAI embeddings + vector store</li><li>Cache hit rate, latency saved, $ saved per 1k queries</li><li>TTL + invalidation when source docs change</li></ul><div class="card-foot"><span class="repo">RajniBalian123/semantic-cache-llm</span><a class="gh" href="#github">Blueprint</a></div></article>
+<article class="card" data-cat="rag"><div class="card-top"><span class="tag rag">RAG</span><span style="font-size:12px;color:var(--muted)">02 — Live · Capstone</span></div><h3>Enterprise Knowledge Assistant</h3><p>Enterprise RAG platform for document Q&amp;A: ingestion and indexing pipelines, hybrid search, guardrails, and automated eval testing.</p><ul><li>Ingestion + indexing pipelines</li><li>Hybrid search with guardrails</li><li>Eval-tested answers</li></ul><div class="card-foot"><span class="repo">RajniBalian123/knowledge-assistant-rag</span><a class="gh" href="https://github.com/RajniBalian123/knowledge-assistant-rag" target="_blank" rel="noopener">View repo</a></div></article>
 
-<article class="card" data-cat="data"><div class="card-top"><span class="tag data">Data · Lakehouse</span><span style="font-size:12px;color:var(--muted)">03 — Blueprint · Data</span></div><h3>Quarantine-Pattern Pipeline</h3><p>Databricks / Delta Lake pipeline that never lets one bad row kill the batch — or silently disappear. Bad rows are flagged, reason-tagged, and reconciled.</p><ul><li><code>is_quarantined</code> + <code>failed_rules[]</code> on every row</li><li>Invariant check: clean + quarantined = input</li><li>Corrections flow re-ingests fixed rows</li></ul><div class="card-foot"><span class="repo">RajniBalian123/quarantine-pipeline</span><a class="gh" href="#github">Blueprint</a></div></article>
+<article class="card" data-cat="rag agent"><div class="card-top"><span class="tag rag">RAG · Agents</span><span style="font-size:12px;color:var(--muted)">03 — Live</span></div><h3>Enterprise Knowledge RAG</h3><p>Parent-document retrieval with reranking, grounded Q&amp;A, and a proposal orchestrator that drafts from retrieved past work.</p><ul><li>Parent-document retriever + reranker</li><li>Abstains on terms the corpus has never seen</li><li>Proposal outlines cite their evidence</li></ul><div class="card-foot"><span class="repo">RajniBalian123/enterprise-knowledge-rag</span><a class="gh" href="https://github.com/RajniBalian123/enterprise-knowledge-rag" target="_blank" rel="noopener">View repo</a></div></article>
 
-<article class="card" data-cat="agent"><div class="card-top"><span class="tag agent">Agents</span><span style="font-size:12px;color:var(--muted)">04 — Blueprint · Agents</span></div><h3>Multi-Agent Critic Workflow</h3><p>LangGraph agent with a draft → critique → rewrite loop, tool use, and human-in-the-loop approval. Evaluated, not just prompted.</p><ul><li>State graph, retry & escalation paths</li><li>Per-step traces + evals on final output</li><li>Guardrails: allow-listed tools only</li></ul><div class="card-foot"><span class="repo">RajniBalian123/langgraph-critic-agent</span><a class="gh" href="#github">Blueprint</a></div></article>
+<article class="card" data-cat="data agent"><div class="card-top"><span class="tag data">Data · Trust</span><span style="font-size:12px;color:var(--muted)">04 — Live</span></div><h3>Multi-Unit Metrics Aggregator</h3><p>Trustworthy reporting across business units — every number carries provenance, access control, and a trust score.</p><ul><li>Provider exports → typed Postgres contracts</li><li>Provisional → approved snapshots</li><li>Knowledge time vs event time</li></ul><div class="card-foot"><span class="repo">RajniBalian123/multi-unit-metrics-aggregator</span><a class="gh" href="https://github.com/RajniBalian123/multi-unit-metrics-aggregator" target="_blank" rel="noopener">View repo</a></div></article>
 
-<article class="card" data-cat="data agent"><div class="card-top"><span class="tag data">Platform · Trust</span><span style="font-size:12px;color:var(--muted)">05 — Blueprint · Showcase</span></div><h3>Cross-BU Metrics Aggregator</h3><p>Trustworthy reporting across three mock business units — every number carries provenance, access control, and a trust score. My leadership-reporting pattern, rebuilt as my own code.</p><ul><li>Metrics from Engineering / Finance / Client Services (synthetic)</li><li>Lineage on every KPI — source, owner, freshness</li><li>Quarantine rate per BU as a trust signal</li></ul><div class="card-foot"><span class="repo">RajniBalian123/bu-metrics-aggregator</span><a class="gh" href="#github">Blueprint</a></div></article>
+<article class="card" data-cat="data agent"><div class="card-top"><span class="tag data">Data · Agents</span><span style="font-size:12px;color:var(--muted)">05 — Live</span></div><h3>Proposal Estimating Assistant</h3><p>TDS → Estimate → TOQ: WBS templates, Hour Confidence, and a review-integrity check on every estimate.</p><ul><li>WBS templates + past-estimate calibration</li><li>Hour Confidence per line</li><li>Schedule + review integrity</li></ul><div class="card-foot"><span class="repo">RajniBalian123/proposal-estimating-assistant</span><a class="gh" href="https://github.com/RajniBalian123/proposal-estimating-assistant" target="_blank" rel="noopener">View repo</a></div></article>
 
-<article class="card" data-cat="mlops"><div class="card-top"><span class="tag">MLOps</span><span style="font-size:12px;color:var(--muted)">06 — Blueprint · MLOps</span></div><h3>Prompt Versioning & Canary Evals</h3><p>Versioned prompt templates with eval-gated rollout. New prompt runs as a canary against the golden set — promote or roll back in one click.</p><ul><li>Prompt registry with diff & history</li><li>Canary % traffic + auto-rollback on regression</li><li>Token / latency / cost per version</li></ul><div class="card-foot"><span class="repo">RajniBalian123/prompt-canary</span><a class="gh" href="#github">Blueprint</a></div></article>
+<article class="card" data-cat="agent"><div class="card-top"><span class="tag agent">Agents</span><span style="font-size:12px;color:var(--muted)">06 — Live</span></div><h3>Stakeholder Comms Playbook</h3><p>The communication patterns that keep enterprise work moving: decision logs, status updates, incident updates, design reviews.</p><ul><li>Decision log + status update templates</li><li>Incident update format</li><li>Design-review request format</li></ul><div class="card-foot"><span class="repo">RajniBalian123/stakeholder-comms-playbook</span><a class="gh" href="https://github.com/RajniBalian123/stakeholder-comms-playbook" target="_blank" rel="noopener">View repo</a></div></article>
+
+<article class="card" data-cat="agent mlops"><div class="card-top"><span class="tag agent">Agents · MLOps</span><span style="font-size:12px;color:var(--muted)">07 — Live</span></div><h3>Agent Skills</h3><p>Six reusable agent skills: issue writer, code review, PR lifecycle, domain modeling, estimate from scope, release.</p><ul><li>Six SKILL.md files, each with a workflow</li><li>Frontmatter + instructions + examples</li><li>Drop into any agent that reads SKILL.md</li></ul><div class="card-foot"><span class="repo">RajniBalian123/agent-skills</span><a class="gh" href="https://github.com/RajniBalian123/agent-skills" target="_blank" rel="noopener">View repo</a></div></article>
+
+<article class="card" data-cat="mlops"><div class="card-top"><span class="tag">MLOps · Cost</span><span style="font-size:12px;color:var(--muted)">08 — Live</span></div><h3>Personal Token Tracker</h3><p>Token and cost tracking across Claude Code, Codex, and OpenCode logs, with per-day buckets and a PostHog sink.</p><ul><li>Parses session logs into token counts</li><li>Prices by model with a price table</li><li>Daily buckets + watermarked reports</li></ul><div class="card-foot"><span class="repo">RajniBalian123/personal-token-tracker</span><a class="gh" href="https://github.com/RajniBalian123/personal-token-tracker" target="_blank" rel="noopener">View repo</a></div></article>
+
+<article class="card" data-cat="agent mlops"><div class="card-top"><span class="tag agent">Agents · MLOps</span><span style="font-size:12px;color:var(--muted)">09 — Live</span></div><h3>PR Review Agent</h3><p>Phased PR review that verifies every finding before publishing, replays past reviews, and records what it learned.</p><ul><li>Verify-then-publish — unproven findings are dropped</li><li>Replay past reviews to catch regressions</li><li>.trail learnings trail</li></ul><div class="card-foot"><span class="repo">RajniBalian123/pr-review-agent</span><a class="gh" href="https://github.com/RajniBalian123/pr-review-agent" target="_blank" rel="noopener">View repo</a></div></article>
+
+<article class="card" data-cat="data agent"><div class="card-top"><span class="tag data">Platform · Data</span><span style="font-size:12px;color:var(--muted)">10 — Live</span></div><h3>Customer Portal</h3><p>Multi-tenant customer portal: requests sync to work items, tenant branding, reveal tokens, per-tenant AI keys.</p><ul><li>Tenant isolation proven in tests</li><li>Request ↔ work-item sync</li><li>Per-tenant branding + AI keys</li></ul><div class="card-foot"><span class="repo">RajniBalian123/customer-portal</span><a class="gh" href="https://github.com/RajniBalian123/customer-portal" target="_blank" rel="noopener">View repo</a></div></article>
+
+<article class="card" data-cat="data"><div class="card-top"><span class="tag data">Data</span><span style="font-size:12px;color:var(--muted)">11 — Live</span></div><h3>Interview Starter: XLSX Chat</h3><p>Chat over spreadsheets: ask questions in plain words, get answers from the data, with column-type inference.</p><ul><li>Column-type inference — dates, numbers, booleans</li><li>SQLite store + plain-words chat</li><li>Demo: average salary 104,775.00 over 8 rows</li></ul><div class="card-foot"><span class="repo">RajniBalian123/interview-starter-xlsx-chat</span><a class="gh" href="https://github.com/RajniBalian123/interview-starter-xlsx-chat" target="_blank" rel="noopener">View repo</a></div></article>
+
+<article class="card" data-cat="agent mlops"><div class="card-top"><span class="tag agent">Agents · MLOps</span><span style="font-size:12px;color:var(--muted)">12 — Live</span></div><h3>GitHub + Teams Helper</h3><p>Critical-only PR review posted to Teams, with GitHub token refresh before expiry.</p><ul><li>Only critical issues — naming nits ignored</li><li>30k-character truncation disclosed</li><li>Token refresh before expiry</li></ul><div class="card-foot"><span class="repo">RajniBalian123/github-teams-helper</span><a class="gh" href="https://github.com/RajniBalian123/github-teams-helper" target="_blank" rel="noopener">View repo</a></div></article>
+
+<article class="card" data-cat="agent"><div class="card-top"><span class="tag agent">Agents</span><span style="font-size:12px;color:var(--muted)">13 — Live</span></div><h3>Durable App Starter</h3><p>App template where workflows survive crashes: leases, idempotency, and agent turns as durable workflows.</p><ul><li>Crash-safe queue — a killed worker loses nothing</li><li>Idempotency keys dedupe replays</li><li>Agent turns run as durable steps</li></ul><div class="card-foot"><span class="repo">RajniBalian123/durable-app-starter</span><a class="gh" href="https://github.com/RajniBalian123/durable-app-starter" target="_blank" rel="noopener">View repo</a></div></article>
+
+<article class="card" data-cat="data"><div class="card-top"><span class="tag data">Platform · Trust</span><span style="font-size:12px;color:var(--muted)">14 — Live</span></div><h3>Multi-Tenant App Base</h3><p>One database schema per organization, so one customer’s data can never leak into another’s.</p><ul><li>Schema-per-tenant isolation — structural, not conventional</li><li>Durable queue + per-org entities</li><li>Numbered activity feed per org</li></ul><div class="card-foot"><span class="repo">RajniBalian123/multi-tenant-app-base</span><a class="gh" href="https://github.com/RajniBalian123/multi-tenant-app-base" target="_blank" rel="noopener">View repo</a></div></article>
+
+<article class="card" data-cat="mlops"><div class="card-top"><span class="tag">MLOps</span><span style="font-size:12px;color:var(--muted)">15 — Live</span></div><h3>Feature Flag Engine</h3><p>Typed flag registry, attribute rules, time windows, percentage rollout, audit log — and it never throws.</p><ul><li>Stable rollout buckets per user</li><li>First matching rule wins</li><li>Missing flag → default + warning, never an exception</li></ul><div class="card-foot"><span class="repo">RajniBalian123/feature-flag-engine</span><a class="gh" href="https://github.com/RajniBalian123/feature-flag-engine" target="_blank" rel="noopener">View repo</a></div></article>
 </div>
-<p style="font-size:13px;color:var(--muted);margin-top:14px">All six are personal project blueprints to be built with public documents and synthetic data — patterns from production work, code to be written from scratch for GitHub. Set up the profile first (setup below), then build and pin them in this order.</p>
+<p style="font-size:13px;color:var(--muted);margin-top:14px">All fifteen are my own code, built from scratch with synthetic data — patterns from production work, no client code, no client names. Pin them in this order, capstone RAG first.</p>
 </section>
 
 <!-- FEATURED DEEP DIVE -->
@@ -215,7 +233,7 @@ LangGraph · Delta Lake · PySpark</span></div>
 <div class="sec-head"><div><div class="eyebrow">Deep dive — featured project</div><h2>How the metrics aggregator earns trust</h2></div><p>LinkedIn lists jobs. This site shows thinking. This is the write-up format used for every project: problem → approach → what proves it works.</p></div>
 <div class="feature">
 <div class="panel"><h3>The problem</h3><p>Leadership asks one question — “how are we doing?” — and gets three different numbers from three business units, none with a source attached. The fix isn’t a prettier dashboard. It’s provenance.</p><h3 style="margin-top:20px">The approach</h3><p>Each BU publishes metrics through the same contract. An aggregation layer joins them, attaches lineage, enforces who can see what, and scores trust from freshness + quarantine rate + owner sign-off. If trust is low, the number is shown — with the reason it’s low, right next to it.</p><div style="display:flex;gap:8px;flex-wrap:wrap;margin-top:16px"><span class="pill">Python APIs</span><span class="pill">Delta Lake</span><span class="pill">Access control</span><span class="pill">Provenance graph</span></div></div>
-<div class="panel"><h3>Request flow</h3><div class="flow"><div><b>1 · Ingest</b><span>BU metrics + schema check</span></div><div><b>2 · Quarantine</b><span>Bad rows flagged, not dropped</span></div><div><b>3 · Aggregate</b><span>Join + lineage attached</span></div><div><b>4 · Score trust</b><span>Freshness · completeness · owner</span></div><div><b>5 · Serve</b><span>API + dashboard, RBAC enforced</span></div></div><p style="margin-top:14px;font-size:13.5px"><strong style="color:var(--ink)">Result pattern to publish in the README:</strong> eval table with reconciliation check (in = clean + quarantined), trust score per BU, and a screenshot of the dashboard with one low-trust metric explained.</p></div>
+<div class="panel"><h3>Request flow</h3><div class="flow"><div><b>1 · Ingest</b><span>BU metrics + schema check</span></div><div><b>2 · Quarantine</b><span>Bad rows flagged, not dropped</span></div><div><b>3 · Aggregate</b><span>Join + lineage attached</span></div><div><b>4 · Score trust</b><span>Freshness · completeness · owner</span></div><div><b>5 · Serve</b><span>API + dashboard, RBAC enforced</span></div></div><p style="margin-top:14px;font-size:13.5px"><strong style="color:var(--ink)">In the live repo:</strong> <a href="https://github.com/RajniBalian123/multi-unit-metrics-aggregator" target="_blank" rel="noopener">multi-unit-metrics-aggregator ↗</a> — data contracts, a provider-swap spike with 13 passing checks, and the trust model: reconciliation (in = clean + quarantined) and a trust score per BU.</p></div>
 </div>
 </section>
 
@@ -251,15 +269,15 @@ LangGraph · Delta Lake · PySpark</span></div>
 
 <!-- GITHUB SETUP -->
 <section id="github">
-<div class="sec-head"><div><div class="eyebrow">GitHub — ready to go live</div><h2>Your account is RajniBalian123 — paste the README, pin the six.</h2></div><p>About 10 minutes end to end. Your existing account and email are already filled in below.</p></div>
+<div class="sec-head"><div><div class="eyebrow">GitHub — live</div><h2>Your account is RajniBalian123 — paste the README, pin the fifteen.</h2></div><p>The account and all fifteen repos are live. About 10 minutes end to end to finish the profile.</p></div>
 <div class="readme-wrap">
 <div>
 <ol class="checklist">
 <li><b>1</b><span><strong>Sign in</strong> at github.com as <strong>RajniBalian123</strong> with <strong>rajni.balian1@gmail.com</strong> — your existing account.</span></li>
 <li><b>2</b><span><strong>Create a repo named exactly</strong> <code>RajniBalian123</code> (same as username) and add a README.md — GitHub turns it into your profile.</span></li>
 <li><b>3</b><span><strong>Paste the README</strong> on the right (copy button) and set your bio to: <em>Applied AI Engineer · Azure OpenAI / RAG / Agents · Toronto</em> + link this website.</span></li>
-<li><b>4</b><span><strong>Create the 6 project repos</strong> using the names in the Work section, each with the README format: demo, architecture diagram, eval table.</span></li>
-<li><b>5</b><span><strong>Pin all 6</strong> on your profile in the order shown — capstone RAG first.</span></li>
+<li><b>4</b><span><strong>Check the 15 project repos</strong> in the Work section — all live, each with demo, architecture, and what proves it works.</span></li>
+<li><b>5</b><span><strong>Pin all 15</strong> on your profile in the order shown — capstone RAG first.</span></li>
 </ol>
 <div style="margin-top:14px;display:flex;gap:8px;flex-wrap:wrap"><a class="btn btn-primary" href="https://github.com/RajniBalian123" target="_blank" rel="noopener">View GitHub profile ↗</a><button class="btn btn-outline" onclick="copyReadme()">Copy profile README</button></div>
 <p id="copyStatus" style="font-size:13px;color:var(--muted);margin-top:10px"></p>
@@ -281,14 +299,23 @@ on Azure OpenAI that pass evals, cite their sources, and track cost.
 `Databricks` `Delta Lake` `PySpark` `AWS (S3 · Lambda · SageMaker)`
 
 ## Pinned projects
-1. **rag-eval-harness** — golden sets, groundedness &amp; citation evals
-2. **semantic-cache-llm** — 0.92-gate semantic cache + cost dashboard
-3. **quarantine-pipeline** — bad rows flagged &amp; reconciled, never dropped
-4. **langgraph-critic-agent** — draft → critique → rewrite agent
-5. **bu-metrics-aggregator** — cross-BU metrics with provenance &amp; trust scores
-6. **prompt-canary** — prompt versioning with eval-gated rollout
+1. **kyc-compliance-rag** — grounded KYC answers with citations
+2. **knowledge-assistant-rag** — enterprise RAG, eval-tested
+3. **enterprise-knowledge-rag** — parent-doc retrieval + proposals
+4. **multi-unit-metrics-aggregator** — cross-BU metrics with provenance
+5. **proposal-estimating-assistant** — TDS → Estimate → TOQ
+6. **stakeholder-comms-playbook** — decision logs &amp; status updates
+7. **agent-skills** — six reusable agent skills
+8. **personal-token-tracker** — token &amp; cost tracking
+9. **pr-review-agent** — verify-then-publish PR review
+10. **customer-portal** — multi-tenant portal, request sync
+11. **interview-starter-xlsx-chat** — chat over spreadsheets
+12. **github-teams-helper** — critical-only review to Teams
+13. **durable-app-starter** — crash-safe workflows
+14. **multi-tenant-app-base** — one schema per organization
+15. **feature-flag-engine** — typed flags, never throws
 
-*All projects are my own code, to be built with public / synthetic data.*</div>
+*All projects are my own code, built with public / synthetic data.*</div>
 </div>
 </section>
 
